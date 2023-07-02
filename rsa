@@ -1,0 +1,16 @@
+#!/usr/bin/python3
+from sys import argv
+
+def factors(q):
+ 
+    n = 1
+    p = 2
+    while q % p != 0:
+        p += 1
+    n = q / p
+
+    print(f"{q}={int(n)}*{p}")
+
+with open(argv[1]) as f:
+    for number in f:
+        factors(eval(number))
